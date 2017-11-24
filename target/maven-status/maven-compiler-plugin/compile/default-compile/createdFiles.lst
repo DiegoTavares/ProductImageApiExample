@@ -1,0 +1,15 @@
+org/hibernate/dialect/SQLiteMetadataBuilderInitializer.class
+org/hibernate/dialect/SQLiteDialect$SQLiteUniqueDelegate.class
+com/apiapp/service/ProductService.class
+com/apiapp/model/Image.class
+org/hibernate/dialect/SQLiteDialect$1.class
+org/hibernate/dialect/SQLiteDialect.class
+org/hibernate/dialect/identity/SQLiteDialectIdentityColumnSupport.class
+org/hibernate/dialect/SQLiteDialect$2.class
+com/apiapp/service/ImageService.class
+com/apiapp/controller/ProductController.class
+org/hibernate/dialect/SQLiteDialect$3.class
+com/apiapp/model/Product.class
+org/hibernate/dialect/SQLiteDialect$4.class
+com/apiapp/controller/ImageController.class
+org/hibernate/dialect/SQLiteMetadataBuilderInitializer$1.class
