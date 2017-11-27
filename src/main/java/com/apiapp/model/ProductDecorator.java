@@ -2,8 +2,6 @@ package com.apiapp.model;
 
 import java.util.Set;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-
 abstract class ProductDecorator extends Product {
 	protected Product toBeDecorated;
 	

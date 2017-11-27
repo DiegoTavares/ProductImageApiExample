@@ -1,11 +1,13 @@
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/model/Image.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/org/hibernate/dialect/identity/SQLiteDialectIdentityColumnSupport.java
-/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/model/Product.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/service/ImageService.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/org/hibernate/dialect/SQLiteDialect.java
-/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/model/ProductWithReferencesDecorator.java
-/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/org/hibernate/dialect/SQLiteMetadataBuilderInitializer.java
-/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/controller/ImageController.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/service/ProductService.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/controller/ProductController.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/model/ProductDecorator.java
+/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/SetApplication.java
+/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/SetCallHandler.java
+/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/model/Product.java
+/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/model/ProductWithReferencesDecorator.java
+/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/org/hibernate/dialect/SQLiteMetadataBuilderInitializer.java
+/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/controller/ImageController.java
