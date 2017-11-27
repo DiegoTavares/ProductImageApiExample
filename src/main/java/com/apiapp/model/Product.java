@@ -6,13 +6,15 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.apiapp.service.ProductService;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonProperty;
 
 @Entity
 @Table(name = "product")
@@ -33,12 +35,10 @@ public class Product {
     private Product parent;
 
     @OneToMany(mappedBy="parent")
-    private Set<Product> childProducts = new HashSet<Product>();
+    protected Set<Product> children = new HashSet<Product>();
     
     @OneToMany(mappedBy="product")
-    private Set<Image> images;
-
-//    private int parent_id;
+    protected Set<Image> images = new HashSet<Image>();
     
 	public Product() {
 		super();
@@ -51,13 +51,41 @@ public class Product {
 		this.description = description;
 	}
 	
-//	public Set<Product> getChildProducts(){
-//		return this.childProducts;
-//	}
-//	
-//	public void setChildProducts(Set<Product> products) {
-//		this.childProducts = products;
-//	}
+	/*
+	 * Products will be compared using their id
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	public boolean equals(Object o) {
+		return (o instanceof Product) && ((Product) o).getId().equals(this.getId());
+	}
+	
+	/*
+	 * Products will be hashed using theis id
+	 * @see java.lang.Object#hashCode()
+	 */
+	public int hashCode() {
+		return getId();
+	}
+	
+	// Getters & Setters
+	
+	@JsonIgnore
+	public Set<Product> getChildren(){
+		return this.children;
+	}
+	
+	public void setChildren(Set<Product> products) {
+		this.children = products;
+	}
+	
+	@JsonIgnore
+	public Set<Image> getImages() {
+		return this.images;
+	}
+	
+	public void setImages(Set<Image> images) {
+		this.images = images;
+	}
 	
 	public String getDescription() {
 		return this.description;

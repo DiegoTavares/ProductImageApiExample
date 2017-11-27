@@ -85,8 +85,8 @@ public class ImageService {
 		try {
 			session = sessionFactory.openSession();
 			session.beginTransaction();
-			
-			Product product = ProductService.getProduct(image.getProduct().getId());
+			int id = image.getProduct().getId();
+			Product product = ProductService.getProduct(id);
 			image.setProduct(product);
 
 			// Creating Contact entity that will be save to the sqlite database

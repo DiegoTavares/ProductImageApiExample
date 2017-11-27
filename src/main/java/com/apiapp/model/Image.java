@@ -1,18 +1,13 @@
 package com.apiapp.model;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.apiapp.service.ProductService;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 @Entity
 @Table(name = "image")
@@ -55,6 +50,7 @@ public class Image {
 		this.type = type;
 	}
 
+//	@JsonIgnore
 	public Product getProduct() {
 		return product;
 	}

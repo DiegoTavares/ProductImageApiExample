@@ -9,6 +9,7 @@
         <property name="dialect"> org.hibernate.dialect.SQLiteDialect</property>
         <property name="connection.driver_class">org.sqlite.JDBC</property>
         <property name="connection.url">jdbc:sqlite:mydb.db</property>
+        <property name="current_session_context_class">thread</property> 
         <property name="connection.username"></property>
         <property name="connection.password"></property>
          
@@ -16,5 +17,6 @@
          
         <mapping class="com.apiapp.model.Product"/>
         <mapping class="com.apiapp.model.Image"/>
+        
     </session-factory>
 </hibernate-configuration>
