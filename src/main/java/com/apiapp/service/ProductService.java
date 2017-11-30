@@ -15,20 +15,10 @@ import com.apiapp.model.Product;
 import com.apiapp.model.ProductWithReferencesDecorator;
 
 public class ProductService {
-	private static SessionFactory sessionFactory = null;
-
-	private static SessionFactory configureSessionFactory() throws HibernateException {
-		sessionFactory = new Configuration().configure().buildSessionFactory();
-
-		return sessionFactory;
-	}
-
-	private static List<Product> getProductsByQuery(String query) {
-		configureSessionFactory();
-
+	protected static List<Product> getProductsByQuery(String query) {
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = SessionBuilder.session().openSession();
 			session.beginTransaction();
 
 			// Use left join fetch to avoid Cartesian Product problem
@@ -59,12 +49,10 @@ public class ProductService {
 		return getProductsByQuery("from Product");
 	}
 
-	public static Product getProductByQuery(String queryStr, int id) {
-		configureSessionFactory();
-
+	protected static Product getProductByQuery(String queryStr, int id) {
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = SessionBuilder.session().openSession();
 			session.beginTransaction();
 
 			Query query = session.createQuery(queryStr);
@@ -87,7 +75,7 @@ public class ProductService {
 	}
 
 	public static ProductWithReferencesDecorator getProductComplete(int id) {
-		Product product = getProductByQuery("from Product where id = :id", id);
+		Product product = getProductByQuery("select p from Product p LEFT JOIN FETCH p.children LEFT JOIN FETCH p.images where p.id = :id", id);
 
 		return new ProductWithReferencesDecorator(product);
 	}
@@ -109,11 +97,9 @@ public class ProductService {
 	}
 
 	public static Product saveOrUpdateProduct(Product product) {
-		configureSessionFactory();
-
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = SessionBuilder.session().openSession();
 			session.beginTransaction();
 
 			session.saveOrUpdate(product);
@@ -133,11 +119,9 @@ public class ProductService {
 	}
 
 	public static void deleteProduct(int id) {
-		configureSessionFactory();
-
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = SessionBuilder.session().openSession();
 			session.beginTransaction();
 
 			Query query = session.createQuery("delete Product where id = :id");

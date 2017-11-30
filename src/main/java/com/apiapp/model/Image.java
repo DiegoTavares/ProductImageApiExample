@@ -26,10 +26,15 @@ public class Image {
 		super();
 	}
 
-	public Image(int id, String type) {
+	public Image(int id, String type, Product product) {
 		super();
 		this.id = id;
 		this.type = type;
+		this.product = product;
+	}
+	
+	public boolean equals(Object o) {
+		return (o instanceof Image) && ((Image) o).getId().equals(this.getId());
 	}
 
 	public Integer getId() {

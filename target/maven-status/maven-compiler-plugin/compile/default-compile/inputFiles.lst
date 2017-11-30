@@ -5,6 +5,7 @@
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/service/ProductService.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/controller/ProductController.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/model/ProductDecorator.java
+/Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/service/SessionBuilder.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/SetApplication.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/SetCallHandler.java
 /Users/diegots/dev/eclipse-workspace/product-image-api/src/main/java/com/apiapp/model/Product.java

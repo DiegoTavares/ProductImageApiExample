@@ -13,20 +13,18 @@ import com.apiapp.model.Image;
 import com.apiapp.model.Product;
 
 public class ImageService {
-	private static SessionFactory sessionFactory = null;
-
-	private static SessionFactory configureSessionFactory() throws HibernateException {
-		sessionFactory = new Configuration().configure().buildSessionFactory();
-
-		return sessionFactory;
-	}
+////	private static SessionFactory sessionFactory = null;
+//
+//	private static SessionFactory configureSessionFactory() throws HibernateException {
+//		sessionFactory = new Configuration().configure().buildSessionFactory();
+//
+//		return sessionFactory;
+//	}
 
 	public static List<Image> getAllImages() {
-		configureSessionFactory();
-
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = SessionBuilder.session().openSession();
 			session.beginTransaction();
 
 			List<Image> imagesList = session.createQuery("from Image").list();
@@ -49,11 +47,9 @@ public class ImageService {
 	}
 
 	public static Image getImage(int id) {
-		configureSessionFactory();
-
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = SessionBuilder.session().openSession();
 			session.beginTransaction();
 
 			Query query = session.createQuery("from Image where id = :id");
@@ -79,14 +75,12 @@ public class ImageService {
 	}
 
 	public static Image saveOrUpdateImage(Image image) {
-		configureSessionFactory();
-		
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = SessionBuilder.session().openSession();
 			session.beginTransaction();
-			int id = image.getProduct().getId();
-			Product product = ProductService.getProduct(id);
+			int productId = image.getProduct().getId();
+			Product product = ProductService.getProduct(productId);
 			image.setProduct(product);
 
 			// Creating Contact entity that will be save to the sqlite database
@@ -110,11 +104,9 @@ public class ImageService {
 	}	
 
 	public static void deleteImage(int id) {
-		configureSessionFactory();
-
 		Session session = null;
 		try {
-			session = sessionFactory.openSession();
+			session = SessionBuilder.session().openSession();
 			session.beginTransaction();
 
 			Query query = session.createQuery("delete Image where id = :id");
@@ -125,8 +117,6 @@ public class ImageService {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 
-			// Rolling back the changes to make the data consistent in case of any failure
-			// in between multiple database write operations.
 			session.getTransaction().rollback();
 		} finally {
 			if (session != null) {

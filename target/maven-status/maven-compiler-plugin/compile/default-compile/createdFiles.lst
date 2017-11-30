@@ -16,5 +16,6 @@ com/apiapp/model/ProductWithReferencesDecorator.class
 org/hibernate/dialect/SQLiteDialect$3.class
 com/apiapp/model/Product.class
 org/hibernate/dialect/SQLiteDialect$4.class
+com/apiapp/service/SessionBuilder.class
 com/apiapp/controller/ImageController.class
 org/hibernate/dialect/SQLiteMetadataBuilderInitializer$1.class

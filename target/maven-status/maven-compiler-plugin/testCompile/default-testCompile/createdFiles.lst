@@ -1,3 +1,4 @@
-com/apiapp/controller/ProductControllerTest$2.class
-com/apiapp/controller/ProductControllerTest$1.class
 com/apiapp/controller/ProductControllerTest.class
+com/apiapp/model/ProductTest.class
+com/apiapp/model/ImageTest.class
+com/apiapp/service/ImageServiceTest.class
